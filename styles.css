@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    /*NEED TO ADD THIS TO HTML: <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans&display=swap" rel="stylesheet"> */
+
+}
+@media only screen and (max-width: 600px) {
+body {
+    background-color: #d9cabd;
+    display: flex;
+    flex-direction: column;
+    color: #000;
+}
+
+label {
+    /* border: black solid 2px; */
+    margin: 20px;
+}
+
+input {
+    padding:5px;
+}
+
+form {
+    /* border: white solid 2px; */
+    background-color: #fff;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px 2px #baaca0;
+}
+
+button {
+    width: 20vh;
+    margin: auto;
+    background-color: #68d388;
+    color: #F1FFE7;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+}
+}
