@@ -1,12 +1,74 @@
 * {
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    /*NEED TO ADD THIS TO HTML: <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans&display=swap" rel="stylesheet"> */
-
+    font-family: 'Ubuntu', sans-serif;
 }
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 768px) {
+    body {
+        background-color: #d9cabd;
+        display: flex;
+        flex-direction: column;
+        color: #000;
+    }
+    
+    label {
+        /* border: black solid 2px; */
+        margin: 10px;
+    }
+    
+    input {
+        padding: 5px;
+        border-radius: 25px;
+        border: 2px solid #baaca0;
+    }
+    
+    form {
+        background-color: #fff;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 25px;
+        box-shadow: 10px 10px 10px 2px #baaca0;
+    }
+    
+    button {
+        width: 20vh;
+        margin: auto;
+        background-color: #68d388;
+        color: #F1FFE7;
+        border: none;
+        padding: 10px;
+        border-radius: 25px;
+        box-shadow: 3px 3px 3px 2px #ebebeb;
+    }
+    
+    ul {
+        /* padding: 20px; */
+        list-style: none;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 25px;
+        box-shadow: 10px 10px 10px 2px #baaca0;
+    }
+    
+    div {
+        padding: 10px;
+        list-style: none;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 25px; 
+        box-shadow: 10px 10px 10px 2px #baaca0;
+    }
+    
+    div .li {
+        border-radius: 25px;
+    }
+    }
+    
+/* DESKTOP BELOW THIS */
+
 body {
     background-color: #d9cabd;
     display: flex;
@@ -15,16 +77,17 @@ body {
 }
 
 label {
-    /* border: black solid 2px; */
-    margin: 20px;
+    margin: 10px;
 }
 
 input {
-    padding:5px;
+    padding: 5px;
+    border-radius: 25px;
+    border: 2px solid #baaca0;
 }
 
 form {
-    /* border: white solid 2px; */
+    width: 50%;
     background-color: #fff;
     text-align: left;
     display: flex;
@@ -43,5 +106,29 @@ button {
     border: none;
     padding: 10px;
     border-radius: 25px;
+    box-shadow: 3px 3px 3px 2px #ebebeb;
 }
+
+ul {
+    width: 50%;
+    /* padding: 20px; */
+    list-style: none;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px 2px #baaca0;
+}
+
+div {
+    width: 50%;
+    padding: 10px;
+    list-style: none;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 25px; 
+    box-shadow: 10px 10px 10px 2px #baaca0;
+}
+
+div .li {
+    border-radius: 25px;
 }
