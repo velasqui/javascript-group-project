@@ -3,74 +3,11 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
-@media only screen and (max-width: 768px) {
-    body {
-        background-color: #d9cabd;
-        display: flex;
-        flex-direction: column;
-        color: #000;
-    }
-    
-    label {
-        /* border: black solid 2px; */
-        margin: 10px;
-    }
-    
-    input {
-        padding: 5px;
-        border-radius: 25px;
-        border: 2px solid #baaca0;
-    }
-    
-    form {
-        background-color: #fff;
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        margin: 20px;
-        border-radius: 25px;
-        box-shadow: 10px 10px 10px 2px #baaca0;
-    }
-    
-    button {
-        width: 20vh;
-        margin: auto;
-        background-color: #68d388;
-        color: #F1FFE7;
-        border: none;
-        padding: 10px;
-        border-radius: 25px;
-        box-shadow: 3px 3px 3px 2px #ebebeb;
-    }
-    
-    ul {
-        /* padding: 20px; */
-        list-style: none;
-        text-align: center;
-        background-color: #fff;
-        border-radius: 25px;
-        box-shadow: 10px 10px 10px 2px #baaca0;
-    }
-    
-    div {
-        padding: 10px;
-        list-style: none;
-        text-align: center;
-        background-color: #fff;
-        border-radius: 25px; 
-        box-shadow: 10px 10px 10px 2px #baaca0;
-    }
-    
-    div .li {
-        border-radius: 25px;
-    }
-    }
-    
-/* DESKTOP BELOW THIS */
+
+/* MOBILE VIEW BELOW THIS */
 
 body {
-    background-color: #d9cabd;
+    background-color: #006E7F;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -82,42 +19,40 @@ label {
 }
 
 input {
-    padding: 5px;
+    padding: 10px;
     border-radius: 25px;
     border: 2px solid #baaca0;
 }
 
+#pmt-amt {
+    margin-left: 10px;
+}
+
 form {
-    width: 50%;
-    background-color: #fff;
+    width: 75%;
+    background-color: #F8CB2E;
     text-align: left;
     display: flex;
     flex-direction: column;
     padding: 20px;
     margin: 20px;
     border-radius: 25px;
-    box-shadow: 10px 10px 10px 2px #baaca0;
+    box-shadow: 10px 10px 10px 2px #EE5007;
 }
 
 button {
     width: 20vh;
     margin: auto;
-    background-color: #68d388;
+    background-color: #B22727;
     color: #F1FFE7;
     border: none;
     padding: 10px;
     border-radius: 25px;
-    box-shadow: 3px 3px 3px 2px #ebebeb;
+    box-shadow: 3px 3px 3px 2px #EE5007;
 }
 
-ul {
-    width: 50%;
-    /* padding: 20px; */
-    list-style: none;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 25px;
-    box-shadow: 10px 10px 10px 2px #baaca0;
+p {
+    margin: 0;
 }
 
 div {
@@ -125,11 +60,29 @@ div {
     padding: 10px;
     list-style: none;
     text-align: center;
-    background-color: #fff;
+    background-color: #B22727;
     border-radius: 25px; 
-    box-shadow: 10px 10px 10px 2px #baaca0;
+    box-shadow: 10px 10px 10px 2px #EE5007;
 }
 
 div .li {
     border-radius: 25px;
+}
+
+
+
+/***Changes put inside this query will only appear AT or ABOVE 768px***/
+/***THIS QUERY IS OUR DESKTOP VIEW***/
+@media only screen and (min-width: 768px) { 
+
+body {
+    background-color: #006E7F;
+    display: flex;
+    color: #000;
+}
+
+/* form {
+    width: 100%;
+} */
+
 }

@@ -35,7 +35,7 @@
 
     <!-- form2 is for input of expenses -->
     <form id="form2">
-      <a>Record an expense: $<input type="number" id="pmt-amt" /></a><br />
+      <p>Record an expense: $<input type="number" id="pmt-amt" placeholder="000.00" /></p><br />
       <label for="pmt-type">Choose a payment category:</label>
       <select name="pmt-type" id="pmt-type">
         <option value="Entertainment">Entertainment</option>
@@ -65,8 +65,9 @@
       <li id="clothTotal">Clothing total: </li>
       <li id="billsTotal">Bills total: </li>
     </div>
+    <br />
     <div>
-      <p id="remaining">Your remaining balance: </p>
+      <p>Your remaining balance: <p id="remaining"></p></p>
     </div>
 
     <!-- <label for="pie-cart">Expense history:</label>

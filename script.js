@@ -20,30 +20,30 @@ const food = document.getElementById('foodTotal');
 const cloths = document.getElementById('clothTotal');
 const bills = document.getElementById('billsTotal');
 const remaining = document.getElementById('remaining');
-//maybe having everything defined at the very top here will help us simplify and locate information
+//*********Accessed variables above*********//
+
+
+//*****Form 1 Button Event*****//
 
 btn1.addEventListener("click", (event) => {
     event.preventDefault();
-    const userObject = document.createElement("div");
-    userObject.innerText = `Hi, ${userName.value} your budget is $${budget.value} for the week.`;
+
+    const userObject = document.createElement("p");
+    userObject.innerText = `Hi ${userName.value}, your budget is $${budget.value} for the week.`;
     remainingBalance = budget.value;
     userLi.append(userObject);
+    remaining.innerText = `$${remainingBalance}`;
+    btn1.style.display = 'none';
+    
 });
-//add an li to the ul here for reported user
-// add error for weekly budget amount
+
+
+//*****Form 2 Button Event*****//
 
 btn2.addEventListener("click", (event) => {
     event.preventDefault();
-    let totalSpent = 0;
-    if (remainingBalance > 0) {
-        totalSpent += pmtAmt.value;
-        remainingBalance -= totalSpent;
-        remaining.innerText = `Your remaining balance is $${remainingBalance}!`;
-    } else if (remainingBalance <= 0) {
-        remaining.innerText = `You're out of money:(!`;
-    }
-    // Need to fix remaining balance when expenses go over budget
 
+    
     if (pmtType.value === 'Entertainment') {
         entertainmentTotal += Number(pmtAmt.value);
         entertainment.innerText = `Entertainment total: $${entertainmentTotal}.`;
@@ -52,12 +52,22 @@ btn2.addEventListener("click", (event) => {
         food.innerText = `Food total: $${foodTotal}.`;
     } else if (pmtType.value === 'Clothing') {
         clothsTotal += Number(pmtAmt.value);
-       cloths.innerText = `Clothing total: $${clothsTotal}.`;
+        cloths.innerText = `Clothing total: $${clothsTotal}.`;
     } else if (pmtType.value === 'Bills') {
         billsTotal += Number(pmtAmt.value);
         bills.innerText = `Bills total: $${billsTotal}.`;
     }
+    
+    do {
+        remainingBalance -= pmtAmt.value;
+        remaining.innerText = `$${remainingBalance}`;
+    } while (remainingBalance < 0);
 
+    if (remainingBalance === 0) {
+        remaining.innerText = `$${remainingBalance}. You should budget better.`;
+        btn2.style.display = 'none';
+    }
+    
     if (budget.value === '') {
         window.alert('Please input weekly budget.');
     }
