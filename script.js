@@ -35,14 +35,15 @@ btn1.addEventListener("click", (event) => {
 btn2.addEventListener("click", (event) => {
     event.preventDefault();
     let totalSpent = 0;
-    if (remainingBalance > 1) {
+    if (remainingBalance > 0) {
         totalSpent += pmtAmt.value;
         remainingBalance -= totalSpent;
-        remaining.innerText = `Your remaining balance is $${remainingBalance}!!`;
-    } else {
+        remaining.innerText = `Your remaining balance is $${remainingBalance}!`;
+    } else if (remainingBalance <= 0) {
         remaining.innerText = `You're out of money:(!`;
     }
-    
+    // Need to fix remaining balance when expenses go over budget
+
     if (pmtType.value === 'Entertainment') {
         entertainmentTotal += Number(pmtAmt.value);
         entertainment.innerText = `Entertainment total: $${entertainmentTotal}.`;
