@@ -19,11 +19,12 @@ const entertainment = document.getElementById('entTotal');
 const food = document.getElementById('foodTotal');
 const cloths = document.getElementById('clothTotal');
 const bills = document.getElementById('billsTotal');
+const remaining = document.getElementById('remaining');
 //maybe having everything defined at the very top here will help us simplify and locate information
 
 btn1.addEventListener("click", (event) => {
     event.preventDefault();
-    const userObject = document.createElement("li");
+    const userObject = document.createElement("div");
     userObject.innerText = `Hi, ${userName.value} your budget is $${budget.value} for the week.`;
     remainingBalance = budget.value;
     userLi.append(userObject);
@@ -34,19 +35,13 @@ btn1.addEventListener("click", (event) => {
 btn2.addEventListener("click", (event) => {
     event.preventDefault();
     let totalSpent = 0;
-    const expObject = document.createElement("div");
     if (remainingBalance > 1) {
         totalSpent += pmtAmt.value;
         remainingBalance -= totalSpent;
-        expObject.innerText = `You paid $${pmtAmt.value} on ${pmtDay.value} for ${pmtType.value}. Your remaining balance is $${remainingBalance}!!`;
+        remaining.innerText = `Your remaining balance is $${remainingBalance}!!`;
     } else {
-        expObject.innerText = `You're out of money:(!`;
+        remaining.innerText = `You're out of money:(!`;
     }
-    
-    // fix conditional for remaining balance < 0;
-    
-    expList.append(expObject);
-    
     
     if (pmtType.value === 'Entertainment') {
         entertainmentTotal += Number(pmtAmt.value);
@@ -62,5 +57,8 @@ btn2.addEventListener("click", (event) => {
         bills.innerText = `Bills total: $${billsTotal}.`;
     }
 
+    if (budget.value === '') {
+        window.alert('Please input weekly budget.');
+    }
+
 });
-//add an li to the ul here for each payment reported
