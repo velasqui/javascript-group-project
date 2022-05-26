@@ -68,14 +68,28 @@ btn2.addEventListener("click", (event) => {
         bills.innerText = `Bills total: $${billsTotal}.`;
     }
     
-    do {
+    if (remainingBalance > 0) {
         remainingBalance -= pmtAmt.value;
         remaining.innerText = `$${remainingBalance}`;
-    } while (remainingBalance < 0);
+        return
+    } else {
+        remainingBalance -= pmtAmt.value;
+        remaining.innerText = `$${remainingBalance}. You're in debt.`
+    }
+    // if (remainingBalance === 0) {
+    // remainingBalance -= pmtAmt.value;
+    // remaining.innerText = `$${remainingBalance}. You should budget better.`;
+    // }
 
-    if (remainingBalance === 0) {
-        remaining.innerText = `$${remainingBalance}. You should budget better.`;
+ 
+    // do {
+    //     remainingBalance -= pmtAmt.value;
+    //     remaining.innerText = `$${remainingBalance}`;
+    // } while (remainingBalance < 0);
+
+    // if (remainingBalance === 0) {
+    //     remaining.innerText = `$${remainingBalance}. You should budget better.`;
         // btn2.style.display = 'none';
-    };
+    // };
 
 });
