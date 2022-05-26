@@ -71,11 +71,11 @@ btn2.addEventListener("click", (event) => {
     do {
         remainingBalance -= pmtAmt.value;
         remaining.innerText = `$${remainingBalance}`;
-    } while (remainingBalance <= 0);
+    } while (remainingBalance < 0);
 
     if (remainingBalance === 0) {
         remaining.innerText = `$${remainingBalance}. You should budget better.`;
         // btn2.style.display = 'none';
-    }
+    };
 
 });

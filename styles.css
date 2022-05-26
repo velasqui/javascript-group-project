@@ -7,6 +7,8 @@
 /* MOBILE VIEW BELOW THIS */
 
 body {
+    margin: 0;
+    padding: 0;
     width: 100vw;
     height: 100vh;
     background-color: #5E7386;
@@ -116,7 +118,7 @@ select {
 @media only screen and (min-width: 768px) { 
 
 body {
-    background-color: #006E7F;
+    background-color: #5E7386;
     display: flex;
     color: #000;
 }
