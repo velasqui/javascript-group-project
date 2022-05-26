@@ -20,6 +20,8 @@ const food = document.getElementById('foodTotal');
 const cloths = document.getElementById('clothTotal');
 const bills = document.getElementById('billsTotal');
 const remaining = document.getElementById('remaining');
+const welcomePage = document.getElementById('welcome-page');
+const restOfPage = document.getElementById('rest-of-page');
 //*********Accessed variables above*********//
 
 
@@ -27,13 +29,21 @@ const remaining = document.getElementById('remaining');
 
 btn1.addEventListener("click", (event) => {
     event.preventDefault();
-
+    
+    if (budget.value === '') {
+        window.alert('Please input weekly budget.');
+        return;
+    };
+    
     const userObject = document.createElement("p");
     userObject.innerText = `Hi ${userName.value}, your budget is $${budget.value} for the week.`;
     remainingBalance = budget.value;
     userLi.append(userObject);
     remaining.innerText = `$${remainingBalance}`;
     btn1.style.display = 'none';
+    restOfPage.style.display = 'flex';
+    welcomePage.style.display = 'none';
+    
     
 });
 
@@ -66,10 +76,6 @@ btn2.addEventListener("click", (event) => {
     if (remainingBalance === 0) {
         remaining.innerText = `$${remainingBalance}. You should budget better.`;
         btn2.style.display = 'none';
-    }
-    
-    if (budget.value === '') {
-        window.alert('Please input weekly budget.');
     }
 
 });
