@@ -48,9 +48,22 @@ input {
     justify-content: center;
 }
 
-form {
+#form1 {
     width: 75%;
     height: 50vh;
+    background-color: #D9edff;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px 2px #4b5c6b;
+    font-size: large;
+}
+
+#form2 {
     background-color: #D9edff;
     text-align: left;
     display: flex;
@@ -69,7 +82,8 @@ label {
 
 button {
     width: 20vh;
-    margin: 20px auto;
+    margin: auto;
+
     background-color: #86a4bf;
     color: black;
     border: none;

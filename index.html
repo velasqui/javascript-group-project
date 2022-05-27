@@ -38,8 +38,22 @@
     </section>
     
 
-    <!-- form2 is for input of expenses -->
     <section id="rest-of-page">
+      
+      <div class="balances" id="userList"></div>
+      
+      <div class="balances">
+        <p>Your remaining balance: <p id="remaining"></p></p>
+      </div>
+      
+      <div class="balances" id="expenseList">
+        <li id="entTotal">Entertainment total: </li>
+        <li id="foodTotal">Food total: </li>
+        <li id="clothTotal">Clothing total: </li>
+        <li id="billsTotal">Bills total: </li>
+      </div>
+      
+      <!-- form2 is for input of expenses -->
       <form id="form2">
         <p id="expense-input">Record an expense: $<input type="number" id="pmt-amt" placeholder="000.00" /></p>
         <div class="form2-inputs">
@@ -67,19 +81,6 @@
         
         <button id="form2-btn">Submit</button>
       </form>
-
-      <div class="balances" id="userList"></div>
-
-      <div class="balances" id="expenseList">
-        <li id="entTotal">Entertainment total: </li>
-        <li id="foodTotal">Food total: </li>
-        <li id="clothTotal">Clothing total: </li>
-        <li id="billsTotal">Bills total: </li>
-      </div>
-
-      <div class="balances">
-        <p>Your remaining balance: <p id="remaining"></p></p>
-      </div>
     </section>
     
 
