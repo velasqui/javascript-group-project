@@ -18,6 +18,22 @@ body {
     color: #000;
 }
 
+#title {
+    margin: 0px;
+  }
+  
+  .navbar {
+    padding: 20px;
+    background: #5e7386;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .links {
+    display: flex;
+    flex-direction: column;
+  }
+
 label {
     margin: 10px;
 }
@@ -136,7 +152,23 @@ body {
     display: flex;
     color: #000;
 }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
 
+  .links {
+    flex-direction: row;
+  }
+
+  .title {
+    margin-left: 40px;
+  }
+  a {
+    margin-right: 20px;
+  }
+}
 /* form {
     width: 100%;
 } */
