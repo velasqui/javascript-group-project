@@ -1,11 +1,11 @@
 * {
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
+    
 }
 
 
 /* MOBILE VIEW BELOW THIS */
-
 body {
     margin: 0;
     padding: 0;
@@ -15,7 +15,25 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    color: #000;
+    color: gray;
+}
+
+#company-name {
+    margin-top: 30px;
+    font-size: xx-large;
+    text-decoration: underline;
+    color: lightgrey;
+}
+
+.nav-list {
+    color: lightgrey;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
 }
 
 #title {
@@ -40,7 +58,7 @@ label {
 
 input {
     padding: 10px;
-    border-radius: 25px;
+    border-radius: 10px;
     border: 2px solid #baaca0;
 }
 
@@ -74,12 +92,13 @@ input {
     justify-content: space-evenly;
     padding: 20px;
     margin: 20px;
-    border-radius: 25px;
+    border-radius: 15px;
     box-shadow: 10px 10px 10px 2px #4b5c6b;
     font-size: large;
 }
 
 #form2 {
+    width: 85%;
     background-color: #D9edff;
     text-align: left;
     display: flex;
@@ -87,7 +106,7 @@ input {
     justify-content: space-evenly;
     padding: 20px;
     margin: 20px;
-    border-radius: 25px;
+    border-radius: 15px;
     box-shadow: 10px 10px 10px 2px #4b5c6b;
     font-size: large;
 }
@@ -98,13 +117,14 @@ label {
 
 button {
     width: 20vh;
-    margin: auto;
-
+    margin: 5px auto;
     background-color: #86a4bf;
-    color: black;
+    color: lightgrey;
     border: none;
     padding: 10px;
-    border-radius: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    
     /* box-shadow: 3px 3px 3px 2px #EE5007; */
 }
 
@@ -115,7 +135,7 @@ p#expense-input {
 
 select {
     padding: 10px;
-    border-radius: 25px;
+    border-radius: 15px;
     border: 2px solid #baaca0;
 }
 
@@ -132,15 +152,21 @@ select {
 }
 
 .balances {
-    width: 50%;
-    margin-bottom: 20px;
-    padding: 10px;
+    width: 85%;
+    margin: 15px 0px;
+    padding: 5px;
     list-style: none;
     text-align: center;
     background-color: #D9edff;
-    border-radius: 25px; 
+    border-radius: 15px; 
     box-shadow: 10px 10px 10px 2px #4b5c6b;
 }
+
+li {
+    margin: 5px 0px;
+}
+
+
 
 
 /***Changes put inside this query will only appear AT or ABOVE 768px***/
