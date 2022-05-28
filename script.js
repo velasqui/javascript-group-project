@@ -3,6 +3,10 @@ let entertainmentTotal = 0;
 let foodTotal = 0;
 let clothsTotal = 0;
 let billsTotal = 0;
+let entertainmentSlice = 0;
+let foodSlice = 0;
+let clothsSlice = 0;
+let billsSlice = 0;
 
 const userName = document.getElementById("username");
 const budget = document.getElementById("weekly-budget");
@@ -23,7 +27,7 @@ const remaining = document.getElementById('remaining');
 const welcomePage = document.getElementById('welcome-page');
 const restOfPage = document.getElementById('rest-of-page');
 
-const pmtTypes = ["Entertainment", "Food", "Clothes", "Bills"];
+const pmtCategories = ["Entertainment", "Food", "Clothes", "Bills"];
 const sliceSizes = [entertainmentSlice, foodSlice, clothsSlice, billsSlice];
 const sliceColors = ["#dca530","#b45946","#2b5797","#9cb446"];
 const pie = document.getElementById('piechart');
@@ -83,16 +87,16 @@ btn2.addEventListener("click", (event) => {
         remaining.innerText = `$${remainingBalance}. You're in debt.`
     };
 
-    // PIE CHART BELOW
-    let entertainmentSlice = (entertainmentTotal / totalTotal) * 100;
-    let foodSlice = (foodTotal/ totalTotal) * 100;
-    let clothsSlice = (clothsTotal / totalTotal) * 100;
-    let billsSlice = (billsTotal / totalTotal) * 100;
+    // // PIE CHART BELOW
+    entertainmentSlice = (entertainmentTotal / totalTotal) * 100;
+    foodSlice = (foodTotal/ totalTotal) * 100;
+    clothsSlice = (clothsTotal / totalTotal) * 100;
+    billsSlice = (billsTotal / totalTotal) * 100;
 
     new Chart("myChart", {
         type: "pie",
         data: {
-        labels: pmtTypes,
+        labels: pmtCategories,
         datasets: [{
             backgroundColor: sliceColors,
             data: sliceSizes
