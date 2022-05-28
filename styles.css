@@ -15,7 +15,10 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    color: gray;
+}
+
+p {
+    margin: 10px 0;
 }
 
 #company-name {
@@ -38,22 +41,20 @@ ul {
 
 #title {
     margin: 0px;
-  }
+}
   
-  .navbar {
-    padding: 20px;
+.navbar {
+    margin: 5px 0;
     background: #5e7386;
     width: 100%;
     color: rgba(255, 255, 255, 0.8);
-  }
+    display: flex;
+    justify-content: space-between;
+}
   
-  .links {
+.links {
     display: flex;
     flex-direction: column;
-  }
-
-label {
-    margin: 10px;
 }
 
 input {
@@ -89,7 +90,7 @@ input {
     text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 20px;
     margin: 20px;
     border-radius: 15px;
@@ -99,11 +100,12 @@ input {
 
 #form2 {
     width: 85%;
+    height: 50vh;
     background-color: #D9edff;
     text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 20px;
     margin: 20px;
     border-radius: 15px;
@@ -112,12 +114,12 @@ input {
 }
 
 label {
-    margin-bottom: 20px;
+    margin: 15px 0; 
 }
 
 button {
     width: 20vh;
-    margin: 5px auto;
+    margin: 0 auto;
     background-color: #86a4bf;
     color: lightgrey;
     border: none;
@@ -129,7 +131,7 @@ button {
 }
 
 p#expense-input {
-    margin: 20px 10px;
+    margin: 0 auto;
     margin-bottom: 0;
 }
 
@@ -165,6 +167,7 @@ select {
 li {
     margin: 5px 0px;
 }
+
 
 
 

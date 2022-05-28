@@ -3,10 +3,6 @@ let entertainmentTotal = 0;
 let foodTotal = 0;
 let clothsTotal = 0;
 let billsTotal = 0;
-let entertainmentSlice = 0;
-let foodSlice = 0;
-let clothsSlice = 0;
-let billsSlice = 0;
 
 const userName = document.getElementById("username");
 const budget = document.getElementById("weekly-budget");
@@ -27,11 +23,6 @@ const remaining = document.getElementById('remaining');
 const welcomePage = document.getElementById('welcome-page');
 const restOfPage = document.getElementById('rest-of-page');
 
-const pmtCategories = ["Entertainment", "Food", "Clothes", "Bills"];
-const sliceSizes = [entertainmentSlice, foodSlice, clothsSlice, billsSlice];
-const sliceColors = ["#dca530","#b45946","#2b5797","#9cb446"];
-const pie = document.getElementById('piechart');
-const totalTotal = entertainmentTotal + foodTotal + clothsTotal + billsTotal;
 //*********Accessed variables above*********//
 
 
@@ -62,7 +53,7 @@ btn1.addEventListener("click", (event) => {
 
 btn2.addEventListener("click", (event) => {
     event.preventDefault();
-
+    
     
     if (pmtType.value === 'Entertainment') {
         entertainmentTotal += Number(pmtAmt.value);
@@ -76,9 +67,9 @@ btn2.addEventListener("click", (event) => {
     } else if (pmtType.value === 'Bills') {
         billsTotal += Number(pmtAmt.value);
         bills.innerText = `Bills total: $${billsTotal}.`;
-    }
+    };
     
-    if (remainingBalance > 0) {
+    if (remainingBalance >= 0) {
         remainingBalance -= pmtAmt.value;
         remaining.innerText = `$${remainingBalance}`;
         return
@@ -86,28 +77,39 @@ btn2.addEventListener("click", (event) => {
         remainingBalance -= pmtAmt.value;
         remaining.innerText = `$${remainingBalance}. You're in debt.`
     };
-
+    
     // // PIE CHART BELOW
-    entertainmentSlice = (entertainmentTotal / totalTotal) * 100;
-    foodSlice = (foodTotal/ totalTotal) * 100;
-    clothsSlice = (clothsTotal / totalTotal) * 100;
-    billsSlice = (billsTotal / totalTotal) * 100;
-
+    const pmtCategories = ["Entertainment", "Food", "Clothes", "Bills"];
+    const sliceColors = ["#dca530","#b45946","#2b5797","#9cb446"];
+    const pie = document.getElementById('myChart');
+    var entertainmentSlice = 0;
+    var foodSlice = 0;
+    var clothsSlice = 0;
+    var billsSlice = 0;
+    const totalTotal = entertainmentTotal + foodTotal + clothsTotal + billsTotal;
+    entertainmentSlice = Math.floor((entertainmentTotal / totalTotal) * 100);
+    foodSlice = Math.floor((foodTotal/ totalTotal) * 100);
+    clothsSlice = Math.floor((clothsTotal / totalTotal) * 100);
+    billsSlice = Math.floor((billsTotal / totalTotal) * 100);
+    const sliceSizes = [entertainmentSlice, foodSlice, clothsSlice, billsSlice];
+    
+    // Seems like the pie chart only shows up when we go -100 in debt
     new Chart("myChart", {
         type: "pie",
         data: {
-        labels: pmtCategories,
-        datasets: [{
-            backgroundColor: sliceColors,
-            data: sliceSizes
+            labels: pmtCategories,
+            datasets: [{
+                backgroundColor: sliceColors,
+                data: sliceSizes
             }]
         },
         options: {
-         title: {
+            title: {
             display: true,
-            text: "Your week's expenses:"
+            text: "Your week's expenses:",
             //we do need to look at changing font family and font color here and I think this is where we do that, still working on that end.
             }
         }
     });
 });
+
