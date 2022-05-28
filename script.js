@@ -22,6 +22,12 @@ const bills = document.getElementById('billsTotal');
 const remaining = document.getElementById('remaining');
 const welcomePage = document.getElementById('welcome-page');
 const restOfPage = document.getElementById('rest-of-page');
+
+const pmtTypes = ["Entertainment", "Food", "Clothes", "Bills"];
+const sliceSizes = [entertainmentSlice, foodSlice, clothsSlice, billsSlice];
+const sliceColors = ["#dca530","#b45946","#2b5797","#9cb446"];
+const pie = document.getElementById('piechart');
+const totalTotal = entertainmentTotal + foodTotal + clothsTotal + billsTotal;
 //*********Accessed variables above*********//
 
 
@@ -75,21 +81,29 @@ btn2.addEventListener("click", (event) => {
     } else {
         remainingBalance -= pmtAmt.value;
         remaining.innerText = `$${remainingBalance}. You're in debt.`
-    }
-    // if (remainingBalance === 0) {
-    // remainingBalance -= pmtAmt.value;
-    // remaining.innerText = `$${remainingBalance}. You should budget better.`;
-    // }
+    };
 
- 
-    // do {
-    //     remainingBalance -= pmtAmt.value;
-    //     remaining.innerText = `$${remainingBalance}`;
-    // } while (remainingBalance < 0);
+    // PIE CHART BELOW
+    let entertainmentSlice = (entertainmentTotal / totalTotal) * 100;
+    let foodSlice = (foodTotal/ totalTotal) * 100;
+    let clothsSlice = (clothsTotal / totalTotal) * 100;
+    let billsSlice = (billsTotal / totalTotal) * 100;
 
-    // if (remainingBalance === 0) {
-    //     remaining.innerText = `$${remainingBalance}. You should budget better.`;
-        // btn2.style.display = 'none';
-    // };
-
+    new Chart("myChart", {
+        type: "pie",
+        data: {
+        labels: pmtTypes,
+        datasets: [{
+            backgroundColor: sliceColors,
+            data: sliceSizes
+            }]
+        },
+        options: {
+         title: {
+            display: true,
+            text: "Your week's expenses:"
+            //we do need to look at changing font family and font color here and I think this is where we do that, still working on that end.
+            }
+        }
+    });
 });
