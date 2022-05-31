@@ -39,22 +39,27 @@ ul {
     list-style-type: none;
 }
 
-#title {
-    margin: 0px;
+.title {
+    margin-left: 10px;
 }
-  
+
 .navbar {
-    margin: 5px 0;
     background: #5e7386;
     width: 100%;
     color: rgba(255, 255, 255, 0.8);
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
-  
+
 .links {
+    margin: 10px;
     display: flex;
     flex-direction: column;
+}
+
+a {
+    padding: 3.5px;
 }
 
 input {
@@ -170,33 +175,32 @@ li {
 
 
 
-
-
 /***Changes put inside this query will only appear AT or ABOVE 768px***/
 /***THIS QUERY IS OUR DESKTOP VIEW***/
 @media only screen and (min-width: 768px) { 
 
-body {
-    background-color: #5E7386;
-    display: flex;
-    color: #000;
-}
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-  }
+    body {
+        background-color: #5E7386;
+        display: flex;
+        color: #000;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-  .links {
-    flex-direction: row;
-  }
+    .links {
+        margin: 10px;
+    }
 
-  .title {
-    margin-left: 40px;
-  }
-  a {
-    margin-right: 20px;
-  }
+    .title {
+        margin: 10px;
+    }
+
+    a {
+        padding: 3.5px;
+    }
 }
 /* form {
     width: 100%;
