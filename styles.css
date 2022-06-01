@@ -192,6 +192,21 @@ li {
 
     .links {
         margin: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .balance-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+    }
+
+    #form2 {
+        width: 50%;
+        margin-top: 20px;
+        margin-right: 45px;
     }
 
     .title {
@@ -200,6 +215,11 @@ li {
 
     a {
         padding: 3.5px;
+    }
+
+    #rest-of-page {
+        flex-direction: row;
+        padding: 150px 0px;
     }
 }
 /* form {

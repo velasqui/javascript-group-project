@@ -13,7 +13,7 @@
   </head>
   <body>   
     <nav class="navbar">
-      <h1 class="title">BRICK CONSULTS</h1>
+      <h1 class="title">BRIK CONSULTS</h1>
 
       <div class="links">
           <a>Contact Us</a>
@@ -59,6 +59,7 @@
 
     <section id="rest-of-page">
       
+      <div class="balance-container">
       <div class="balances" id="userList"></div>
       
       <div class="balances">
@@ -71,7 +72,8 @@
         <li id="clothTotal">Clothing total: </li>
         <li id="billsTotal">Bills total: </li>
       </div>
-      
+      </div>
+
       <!-- form2 is for input of expenses -->
       <form id="form2">
         <p id="expense-input">Record an expense: $<input type="number" id="pmt-amt" placeholder="000.00" /></p>
@@ -100,11 +102,9 @@
         
         <button id="form2-btn">Submit</button>
       </form>
-      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
     </section>
     
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -68,48 +68,13 @@ btn2.addEventListener("click", (event) => {
         billsTotal += Number(pmtAmt.value);
         bills.innerText = `Bills total: $${billsTotal}.`;
     };
+
+    remainingBalance -= pmtAmt.value;
     
     if (remainingBalance >= 0) {
-        remainingBalance -= pmtAmt.value;
         remaining.innerText = `$${remainingBalance}`;
-        return
-    } else {
-        remainingBalance -= pmtAmt.value;
+    } else if (remainingBalance < 0) {
         remaining.innerText = `$${remainingBalance}. You're in debt.`
     };
-    
-    // // PIE CHART BELOW
-    const pmtCategories = ["Entertainment", "Food", "Clothes", "Bills"];
-    const sliceColors = ["#dca530","#b45946","#2b5797","#9cb446"];
-    const pie = document.getElementById('myChart');
-    var entertainmentSlice = 0;
-    var foodSlice = 0;
-    var clothsSlice = 0;
-    var billsSlice = 0;
-    const totalTotal = entertainmentTotal + foodTotal + clothsTotal + billsTotal;
-    entertainmentSlice = Math.floor((entertainmentTotal / totalTotal) * 100);
-    foodSlice = Math.floor((foodTotal/ totalTotal) * 100);
-    clothsSlice = Math.floor((clothsTotal / totalTotal) * 100);
-    billsSlice = Math.floor((billsTotal / totalTotal) * 100);
-    const sliceSizes = [entertainmentSlice, foodSlice, clothsSlice, billsSlice];
-    
-    // Seems like the pie chart only shows up when we go -100 in debt
-    new Chart("myChart", {
-        type: "pie",
-        data: {
-            labels: pmtCategories,
-            datasets: [{
-                backgroundColor: sliceColors,
-                data: sliceSizes
-            }]
-        },
-        options: {
-            title: {
-            display: true,
-            text: "Your week's expenses:",
-            //we do need to look at changing font family and font color here and I think this is where we do that, still working on that end.
-            }
-        }
-    });
 });
 
